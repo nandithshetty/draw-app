@@ -1,27 +1,66 @@
-# draw 🖌
+🎨 Collaborative Whiteboard App
 
-draw is a tiny in-memory collaborative whiteboard for the web. draw syncs pen strokes in real-time across all users in the room, as well as managing presence in real-time between all active users to show when users join and leave. I wouldn't call it production-ready, but it works well enough for my personal use cases of doodling with friends, and fits in a few megabytes of RAM.
+This is a real-time collaborative drawing app built with Go (Golang) and WebSockets.
+Multiple users can join the same board and draw together, with strokes synced live across all browsers.
 
-I usually use it to share drawings and doodle together with friends on iPads with the Apple Pencil, and works quite well even on slow connections and devices.
+✨ Features
 
-It's built on...
+🖌 Real-time collaborative drawing
 
-- [Torus](https://github.com/thesephist/torus) as a light frontend UI library
-- [blocks.css](https://thesephist.github.io/blocks.css/) to add some spice to the UI design
-- [Gorilla WebSocket](https://github.com/gorilla/websocket) for initiating and managing WebSocket connections, and as a simple web server
+👥 Presence tracking (see who is online)
 
-![draw screenshot](draw.jpg)
+⚡ Lightweight and fast (runs in a few MB of RAM)
 
-## Deploy
+🌐 Works on LAN or can be deployed online
 
-Deployment is managed by systemd. Copy the `draw.service` file to `/etc/systemd/system/draw.service` and update:
+🎨 Simple and clean frontend
 
-- replace `draw-user` with your Linux user
-- replace `/home/draw-user/draw` with your working directory (path to repository or a copy of `static/`)
+🛠️ Tech Stack
 
-Then start draw as a service:
+Backend: Go + Gorilla WebSocket
 
-```sh
-systemctl daemon-reload # reload systemd script
-systemctl start draw   # start draw server as a service
-```
+Frontend: HTML, CSS, JavaScript (Torus.js, Blocks.css)
+
+🚀 Running Locally (Windows)
+
+Install Go on your system.
+
+Clone this repo:
+
+``git clone https://github.com/nandithshetty/draw-app.git
+cd draw-app``
+
+
+Run the server:
+
+``go run cmd/draw.go``
+
+
+Open your browser at:
+👉 http://localhost:1243
+
+🌐 Collaboration
+
+Same PC: Open multiple browsers → draw in real-time.
+
+Same Wi-Fi / LAN:
+
+Find your local IP (ipconfig → IPv4).
+
+Friends can join via:
+
+``http://YOUR-IP:1243``
+
+
+Over the Internet: Deploy on a cloud server (Render, Railway, DigitalOcean, AWS, etc.).
+
+📸 Screenshot
+
+Here’s how it looks in action: 
+<img width="1531" height="852" alt="Screenshot 2025-08-19 013106" src="https://github.com/user-attachments/assets/de750b9b-3290-4b51-9e39-748f6a078d4d" />
+
+📜 License
+
+This project is open source under the MIT License.
+
+⚡ Tip: Name your repo draw-app on GitHub so the clone link matches.
