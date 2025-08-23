@@ -100,4 +100,7 @@ button {
     align-items: flex-start;
 }
 
-
+li.toast {
+    list-style: none;
+    margin-bottom: 2px;
+}
